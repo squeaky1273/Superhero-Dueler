@@ -1,3 +1,5 @@
+import random
+
 class Ability:
     def __init__(self, name, attack_strength):
         """
@@ -6,4 +8,8 @@ class Ability:
 
         """
         self.name = name
-        self.max_damage = attacks_strength
+        self.max_damage = attack_strength
+
+    def attack(self):
+
+        return random.randint(2, 7)
