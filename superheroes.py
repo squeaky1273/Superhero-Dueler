@@ -13,3 +13,10 @@ class Ability:
     def attack(self):
 
         return random.randint(2, 7)
+
+if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+    ability = Ability("Debugging Ability", 20)
+    print(ability.name)
+    print(ability.attack())
