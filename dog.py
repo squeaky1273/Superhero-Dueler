@@ -7,3 +7,9 @@ class Dog:
     # Methods are defined as their own named functions inside the class
     def bark(self):
         print("Woof!")
+    
+    def sit(self):
+        print("<> sits")
+
+    def roll_over(self):
+        print("<> rolls over")
