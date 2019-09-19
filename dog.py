@@ -7,6 +7,3 @@ class Dog:
     # Methods are defined as their own named functions inside the class
     def bark(self):
         print("Woof!")
-
-my_dog = Dog("Rex", "SuperDog")
-my_dog.bark()
