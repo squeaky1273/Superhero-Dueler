@@ -9,7 +9,7 @@ class Ability:
         self.name = name
         self.max_damage = attack_strength
 
-    def attack(self):
+    def attack(self): # 
       ''' Return a value between 0 and the value set by self.max_damage.'''
       return random.randint(0, self.max_damage)
 
@@ -28,7 +28,7 @@ class Armor:
 
 class Hero:
     def __init__(self, name, starting_health = 100): #Initialization function
-        """
+        """Instance properties
         abilities: List
         armors: List
         name: String
@@ -41,15 +41,11 @@ class Hero:
         self.starting_health = self.current_health = starting_health
 
     def add_ability(self, ability):
-        ''' Add ability to abilities list '''
-
+        ''' Add ability to abilities list (append)'''
+        self.abilities.append(ability)
 
 if __name__ == "__main__":
-    # Test the Ability class
-    ability = Ability("Debugging Ability", 20)
-    print(ability.name)
-    print(ability.attack())
-    
-    my_hero = Hero("Grace Hopper", 200)
-    print(my_hero.name)
-    print(my_hero.current_health)
+    ability = Ability("Great Debugging", 50)
+    hero = Hero("Grace Hopper", 200)
+    hero.add_ability(ability)
+    print(hero.abilities)
