@@ -5,7 +5,6 @@ class Ability:
         """
         name: String
         max_damage: Integer
-
         """
         self.name = name
         self.max_damage = attack_strength
@@ -28,7 +27,7 @@ class Armor:
         return random.randint(0, self.max_block)
 
 class Hero:
-    def __init__(self, name, starting_health=100): #Initialization function
+    def __init__(self, name, starting_health): #Initialization function
         """
         abilities: List
         armors: List
@@ -36,6 +35,11 @@ class Hero:
         starting_health: Integer
         current_health: Integer
         """
+        self.abilities = 
+        self.armors = 
+        self.name = name
+        self.starting_health = starting_health
+        self.current_health
 
 
 if __name__ == "__main__":
@@ -43,3 +47,7 @@ if __name__ == "__main__":
     ability = Ability("Debugging Ability", 20)
     print(ability.name)
     print(ability.attack())
+    
+    my_hero = Hero("Grace Hopper", 200)
+    print(my_hero.name)
+    print(my_hero.current_health)
