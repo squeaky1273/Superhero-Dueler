@@ -27,7 +27,7 @@ class Armor:
         return random.randint(0, self.max_block)
 
 class Hero:
-    def __init__(self, name, starting_health): #Initialization function
+    def __init__(self, name, starting_health = 100): #Initialization function
         """
         abilities: List
         armors: List
@@ -35,11 +35,13 @@ class Hero:
         starting_health: Integer
         current_health: Integer
         """
-        self.abilities = 
-        self.armors = 
+        self.abilities = list()
+        self.armors = list()
         self.name = name
-        self.starting_health = starting_health
-        self.current_health
+        self.starting_health = self.current_health = starting_health
+
+    def add_ability(self, ability):
+        ''' Add ability to abilities list '''
 
 
 if __name__ == "__main__":
