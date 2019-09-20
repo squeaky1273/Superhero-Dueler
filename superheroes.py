@@ -1,7 +1,7 @@
 import random
 
 class Ability:
-    def __init__(self, name, attack_strength):
+    def __init__(self, name, attack_strength): #Initialization function
         """
         name: String
         max_damage: Integer
@@ -15,7 +15,7 @@ class Ability:
       return random.randint(0, self.max_damage)
 
 class Armor:
-    def __init__(self, name, max_block):
+    def __init__(self, name, max_block): #Initialization function
         """
         name: String
         max_block: integer
@@ -28,7 +28,7 @@ class Armor:
         return random.randint(0, self.max_block)
 
 class Hero:
-    def __init__(self, name, starting_health=100):
+    def __init__(self, name, starting_health=100): #Initialization function
         """
         abilities: List
         armors: List
@@ -36,7 +36,7 @@ class Hero:
         starting_health: Integer
         current_health: Integer
         """
-        
+
 
 if __name__ == "__main__":
     # Test the Ability class
