@@ -58,6 +58,11 @@ class Hero:
           Armor: Armor Object
         '''
         self.armors.append(armor)
+    
+    def defend(self, damage_amt):
+        '''Runs `block` method on each armor.
+        Returns sum of all blocks
+        '''  
 
 if __name__ == "__main__":
     ability = Ability("Great Debugging", 50)
