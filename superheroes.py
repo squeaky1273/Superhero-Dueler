@@ -73,12 +73,13 @@ class Hero:
     def take_damage(self, damage):
         '''Updates self.current_health to reflect the damage minus the defense.
         '''
-        
+        self.current_health = self.current_health - damage
+
+        return self.current_health
 
 if __name__ == "__main__":
-    ability = Ability("Great Debugging", 50)
-    another_ability = Ability("Smarty Pants", 90)
     hero = Hero("Grace Hopper", 200)
-    hero.add_ability(ability)
-    hero.add_ability(another_ability)
-    print(hero.attack())
+    shield = Armor("Shield", 50)
+    hero.add_armor(shield)
+    hero.take_damage(50)
+    print(hero.current_health)
