@@ -70,6 +70,10 @@ class Hero:
             total_armor = total_armor + block
         return sum
     
+    def take_damage(self, damage):
+        '''Updates self.current_health to reflect the damage minus the defense.
+        '''
+        
 
 if __name__ == "__main__":
     ability = Ability("Great Debugging", 50)
