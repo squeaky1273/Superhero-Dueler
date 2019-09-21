@@ -77,6 +77,11 @@ class Hero:
 
         return self.current_health
 
+    def is_alive(self):
+         '''Return True or False depending on whether the hero is alive or not.
+         '''
+         
+
 if __name__ == "__main__":
     hero = Hero("Grace Hopper", 200)
     shield = Armor("Shield", 50)
