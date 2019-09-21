@@ -35,8 +35,8 @@ class Hero:
         starting_health: Integer
         current_health: Integer
         """
-        self.abilities = list()
-        self.armors = list()
+        self.abilities = []
+        self.armors = []
         self.name = name
         self.starting_health = self.current_health = starting_health
 
@@ -63,6 +63,13 @@ class Hero:
         '''Runs `block` method on each armor.
         Returns sum of all blocks
         '''  
+        total_armor = 0
+
+        for armor in self.armors:
+            block = armor.block()
+            total_armor = total_armor + block
+        return sum
+    
 
 if __name__ == "__main__":
     ability = Ability("Great Debugging", 50)
