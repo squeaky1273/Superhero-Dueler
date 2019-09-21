@@ -80,11 +80,19 @@ class Hero:
     def is_alive(self):
          '''Return True or False depending on whether the hero is alive or not.
          '''
-         
+         if self.current_health < 1:
+             return False
+         else:
+             return True 
+    
+    def fight(self, opponent):
+          ''' Current Hero will take turns fighting the opponent hero passed in.
+          '''
+
 
 if __name__ == "__main__":
     hero = Hero("Grace Hopper", 200)
-    shield = Armor("Shield", 50)
-    hero.add_armor(shield)
-    hero.take_damage(50)
-    print(hero.current_health)
+    hero.take_damage(150)
+    print(hero.is_alive())
+    hero.take_damage(15000)
+    print(hero.is_alive())
