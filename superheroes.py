@@ -88,11 +88,32 @@ class Hero:
     def fight(self, opponent):
           ''' Current Hero will take turns fighting the opponent hero passed in.
           '''
+          while self.is_alive() == True and opponent.is_alive() == True: # While self and opponent are alive
+              if len(self.abilities) > 0 and len(opponent.abilities) > 0: # If both self and opponent are alive
+                  self_turn = self.attack() # Self ability/attack
+                  opponent.take_damage(self_turn)
 
+                  opponent_turn = opponent.attack() # Opponent ability/attack
+                  self.take_damage(opponent_turn)
+
+                  if opponent.is_alive() == False:
+                      print(self.name + " wins!") # Self wins
+                  else: 
+                      print(opponent.name + " wins!") # Opponent wins
+             
+              elif len(self.abilities) == 0 and len(opponent.abilities) == 0: # If no abilities exist
+                  print("Draw!")
+                  return False
 
 if __name__ == "__main__":
-    hero = Hero("Grace Hopper", 200)
-    hero.take_damage(150)
-    print(hero.is_alive())
-    hero.take_damage(15000)
-    print(hero.is_alive())
+    hero1 = Hero("Wonder Woman")
+    hero2 = Hero("Dumbledore")
+    ability1 = Ability("Super Speed", 300)
+    ability2 = Ability("Super Eyes", 130)
+    ability3 = Ability("Wizard Wand", 80)
+    ability4 = Ability("Wizard Beard", 20)
+    hero1.add_ability(ability1)
+    hero1.add_ability(ability2)
+    hero2.add_ability(ability3)
+    hero2.add_ability(ability4)
+    hero1.fight(hero2)
