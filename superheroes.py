@@ -112,6 +112,10 @@ class Weapon(Ability):
         """
         return random.randint(self.max_damage // 2, self.max_damage)     
 
+class Team:
+    def __init__(self, name):
+        ''' Initialize your team with its team name
+        '''
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
