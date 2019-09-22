@@ -117,6 +117,7 @@ class Team:
         ''' Initialize your team with its team name
         '''
         self.name = name
+        self.heroes = []
 
     def remove_hero(self, name):
         '''Remove hero from heroes list.
