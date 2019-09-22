@@ -128,6 +128,7 @@ class Team:
 
     def add_hero(self, name):
         '''Add Hero object to self.heroes.'''
+        self.heroes.append(hero)
         
 
 if __name__ == "__main__":
