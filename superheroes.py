@@ -126,7 +126,7 @@ class Team:
     def view_all_heroes(self):
         '''Prints out all heroes to the console.'''
 
-    def add_hero(self, name):
+    def add_hero(self, hero):
         '''Add Hero object to self.heroes.'''
         self.heroes.append(hero)
         
