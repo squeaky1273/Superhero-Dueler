@@ -116,6 +116,7 @@ class Team:
     def __init__(self, name):
         ''' Initialize your team with its team name
         '''
+        self.name = name
 
     def remove_hero(self, name):
         '''Remove hero from heroes list.
@@ -126,7 +127,9 @@ class Team:
         '''Prints out all heroes to the console.'''
 
     def add_hero(self, name):
-  '''Add Hero object to self.heroes.'''
+        '''Add Hero object to self.heroes.'''
+        
+
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
