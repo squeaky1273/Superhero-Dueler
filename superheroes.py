@@ -120,6 +120,8 @@ class Team:
         '''Remove hero from heroes list.
         If Hero isn't found return 0.
         '''
+    def view_all_heroes(self):
+        '''Prints out all heroes to the console.'''
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
