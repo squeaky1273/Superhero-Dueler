@@ -116,6 +116,11 @@ class Team:
     def __init__(self, name):
         ''' Initialize your team with its team name
         '''
+    def remove_hero(self, name):
+        '''Remove hero from heroes list.
+        If Hero isn't found return 0.
+        '''
+
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
