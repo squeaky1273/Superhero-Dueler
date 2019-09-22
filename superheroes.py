@@ -109,7 +109,8 @@ class Weapon(Ability):
     def attack(self):
         """  This method returns a random value
         between one half to the full attack power of the weapon.
-        """        
+        """
+        return random.randint(self.max_damage // 2, self.max_damage)     
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
