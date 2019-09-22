@@ -105,6 +105,12 @@ class Hero:
                   print("Draw!")
                   return False
 
+class Weapon(Ability):
+    def attack(self):
+        """  This method returns a random value
+        between one half to the full attack power of the weapon.
+        """        
+
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
