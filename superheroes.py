@@ -150,6 +150,9 @@ class Team:
     def add_hero(self, hero):
         '''Add Hero object to self.heroes.'''
         self.heroes.append(hero)
+    
+    def attack(self, other_team):
+        ''' Battle each team against each other.'''
         
 
 if __name__ == "__main__":
