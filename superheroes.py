@@ -153,6 +153,9 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
+    
+    def revive_heroes(self, health=100):
+        ''' Reset all heroes health to starting_health'''
         
 
 if __name__ == "__main__":
