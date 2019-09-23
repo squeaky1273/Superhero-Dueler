@@ -39,6 +39,8 @@ class Hero:
         self.armors = []
         self.name = name
         self.starting_health = self.current_health = starting_health
+        self.deaths = 0
+        self.kills = 0
 
     def add_ability(self, ability):
         ''' Add ability to abilities list (append)'''
