@@ -9,7 +9,7 @@ class Ability:
         self.name = name
         self.max_damage = attack_strength
 
-    def attack(self): # 
+    def attack(self): 
       ''' Return a value between 0 and the value set by self.max_damage.'''
       return random.randint(0, self.max_damage)
 
@@ -44,6 +44,7 @@ class Hero:
 
     def add_kill(self, num_kills):
         ''' Update kills with num_kills'''
+        self.kills += num_kills
 
     def add_ability(self, ability):
         ''' Add ability to abilities list (append)'''
@@ -154,3 +155,4 @@ if __name__ == "__main__":
     hero1.add_ability(ability2)
     hero2.add_ability(ability3)
     hero2.add_ability(ability4)
+    hero1.fight(hero2)
