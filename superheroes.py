@@ -123,6 +123,15 @@ class Team:
         '''Remove hero from heroes list.
         If Hero isn't found return 0.
         '''
+        hero_names = []
+        for hero in self.heroes:
+            hero_names.append(hero.name)
+            if name not in self.heroes:
+                return 0
+            else:
+                for hero in self.heroes:
+                    if hero.name == name:
+                        self.heroes.remove(hero)
 
     def view_all_heroes(self):
         '''Prints out all heroes to the console.'''
