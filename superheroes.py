@@ -47,7 +47,8 @@ class Hero:
         self.kills += num_kills
 
     def add_deaths(self, num_deaths):
-    ''' Update deaths with num_deaths'''
+        ''' Update deaths with num_deaths'''
+        self.deaths += num_deaths
 
     def add_ability(self, ability):
         ''' Add ability to abilities list (append)'''
