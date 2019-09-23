@@ -108,8 +108,12 @@ class Hero:
 
                   if opponent.is_alive() == False:
                       print(self.name + " wins!") # Self wins
+                      self.add_kill(1)
+                      opponent.add_deaths(1)
                   else: 
                       print(opponent.name + " wins!") # Opponent wins
+                      self.add_deaths(1)
+                      opponent.add_kill(1)
              
               elif len(self.abilities) == 0 and len(opponent.abilities) == 0: # If no abilities exist
                   print("Draw!")
