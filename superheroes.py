@@ -131,7 +131,7 @@ class Team:
     def view_all_heroes(self):
         '''Prints out all heroes to the console.'''
         for hero in self.heroes:
-            print(format(hero.name))
+            print("{}".format(hero.name))
 
     def add_hero(self, hero):
         '''Add Hero object to self.heroes.'''
