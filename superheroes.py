@@ -156,7 +156,9 @@ class Team:
     
     def revive_heroes(self, health=100):
         ''' Reset all heroes health to starting_health'''
-        
+
+    def stats(self):
+        '''Print team statistics'''
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
