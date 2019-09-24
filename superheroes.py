@@ -153,12 +153,16 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
-    
+        
     def revive_heroes(self, health=100):
         ''' Reset all heroes health to starting_health'''
-
+        pass
     def stats(self):
         '''Print team statistics'''
+        for hero in self.heroes:
+            print("Hero: " + hero.name)
+            print("Death: " +str(hero.num_deaths))
+            print("Kills: " + str(hero.num_kills))
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
