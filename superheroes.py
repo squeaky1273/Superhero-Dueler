@@ -1,4 +1,5 @@
 import random
+from random import choice
 
 class Ability:
     def __init__(self, name, attack_strength): #Initialization function
@@ -153,10 +154,14 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
+        self.hero = choice(self.hero)
+        opponent = choice(other_team.opponent())
         
+        self.hero.fight(opponent)
     def revive_heroes(self, health=100):
         ''' Reset all heroes health to starting_health'''
-        pass
+        for hero in self.heroes:
+            hero.current_heakth = hero.starting_health
     def stats(self):
         '''Print team statistics'''
         for hero in self.heroes:
