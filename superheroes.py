@@ -119,6 +119,10 @@ class Hero:
               elif len(self.abilities) == 0 and len(opponent.abilities) == 0: # If no abilities exist
                   print("Draw!")
                   return False
+    
+    def add_weapon(self, weapon):
+        '''Add weapon to self.abilities'''
+        pass
 
 class Weapon(Ability):
     def attack(self):
