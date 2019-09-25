@@ -181,11 +181,19 @@ class Arena:
         '''
         pass
 
-    def cretae_hero(self):
+    def create_hero(self):
         '''Prompt user for Hero information
           return Hero with values from user input.
         '''  
-        pass     
+        pass  
+
+    def build_team_one(self):
+        '''Prompt the user to build team_one '''    
+        pass
+
+    def build_team_two(self):
+        '''Prompt the user to build team_two'''
+        pass
 
     def create_ability(self):
         '''Prompt for Ability information.
