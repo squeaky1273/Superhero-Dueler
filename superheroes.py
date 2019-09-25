@@ -179,7 +179,10 @@ class Arena:
             team_one: None
             team_two: None
         '''
-             
+    def create_ability(self):
+        '''Prompt for Ability information.
+            return Ability with values from user Input
+        '''   
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
