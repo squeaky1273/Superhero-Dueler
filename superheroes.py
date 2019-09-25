@@ -124,6 +124,11 @@ class Hero:
         '''Add weapon to self.abilities'''
         pass
 
+    def add_armor(self, armor):
+    '''Add Armor to self.armors
+        armor: Armor Object
+    '''
+
 class Weapon(Ability):
     def attack(self):
         """  This method returns a random value
