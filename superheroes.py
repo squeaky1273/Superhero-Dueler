@@ -213,6 +213,10 @@ class Arena:
         '''  
         pass
 
+    def team_battle(self):
+        '''Prompt the user to build team_two'''  
+        pass  
+
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
