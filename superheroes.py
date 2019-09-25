@@ -179,10 +179,19 @@ class Arena:
             team_one: None
             team_two: None
         '''
+        pass
+    
     def create_ability(self):
         '''Prompt for Ability information.
             return Ability with values from user Input
-        '''   
+        '''
+        pass
+
+    def create_weapon(self):
+        '''Prompt user for Weapon information
+            return Weapon with values from user input.
+        '''      
+        pass
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
