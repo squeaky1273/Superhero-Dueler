@@ -217,6 +217,10 @@ class Arena:
         '''Prompt the user to build team_two'''  
         pass  
 
+    def show_stats(self):
+        '''Prints team statistics to terminal.'''    
+        pass
+
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
