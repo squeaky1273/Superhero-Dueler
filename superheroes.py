@@ -180,7 +180,7 @@ class Arena:
             team_two: None
         '''
         pass
-    
+
     def create_ability(self):
         '''Prompt for Ability information.
             return Ability with values from user Input
@@ -191,6 +191,12 @@ class Arena:
         '''Prompt user for Weapon information
             return Weapon with values from user input.
         '''      
+        pass
+
+    def create_armor(self):
+        '''Prompt user for Armor information
+          return Armor with values from user input.
+        '''  
         pass
 
 if __name__ == "__main__":
