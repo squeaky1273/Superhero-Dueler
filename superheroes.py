@@ -124,11 +124,6 @@ class Hero:
         '''Add weapon to self.abilities'''
         pass
 
-    def add_armor(self, armor):
-    '''Add Armor to self.armors
-        armor: Armor Object
-    '''
-
 class Weapon(Ability):
     def attack(self):
         """  This method returns a random value
@@ -177,6 +172,14 @@ class Team:
             print("Hero: " + hero.name)
             print("Death: " +str(hero.num_deaths))
             print("Kills: " + str(hero.num_kills))
+
+class Arena:
+    def __init__(self):
+        '''Instantiate properties
+            team_one: None
+            team_two: None
+        '''
+             
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
