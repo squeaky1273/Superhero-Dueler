@@ -218,7 +218,7 @@ class Arena:
 
     def team_battle(self):
         '''Prompt the user to build team_two'''  
-        pass  
+        self.team_one.attack(self.team_two)
 
     def show_stats(self):
         '''Prints team statistics to terminal.'''    
