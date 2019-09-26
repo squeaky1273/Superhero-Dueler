@@ -182,22 +182,30 @@ class Arena:
         '''Prompt user for Hero information
           return Hero with values from user input.
         '''  
-        pass  
+        self.name = input("Enter a name for your hero: ") 
+        new_hero = Hero(self.name)
+        self.prompt_for(new_hero, "weapon")
+        self.prompt_for(new_hero, "ability")
+        self.prompt_for(new_hero, "armor")
+        return new_hero
 
     def build_team_one(self):
         '''Prompt the user to build team_one '''    
-        pass
+        team_one_name = input("Enter a name for team one: ")
+        self.team_one = Team(team_one_name)
+
 
     def build_team_two(self):
         '''Prompt the user to build team_two'''
-        pass
+        team_two_name = input("Enter a name fot team two: ")
+        self.team_two = Team(team_two_name)
 
     def create_ability(self):
         '''Prompt for Ability information.
             return Ability with values from user Input
         '''
         name = input("Enter a name for your new ability")
-        strength = int()
+        strength = int(input("Enter an attack ability/strength: "))
         return Ability(name, strength)
 
     def create_weapon(self):
@@ -213,7 +221,7 @@ class Arena:
           return Armor with values from user input.
         '''  
         name = input("Enter a name for your new armor")
-        block = int(input())
+        block = int(input("Enter a block power: "))
         return Armor(name, block)
 
     def team_battle(self):
