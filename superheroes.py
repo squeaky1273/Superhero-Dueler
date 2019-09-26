@@ -175,11 +175,8 @@ class Team:
 
 class Arena:
     def __init__(self):
-        '''Instantiate properties
-            team_one: None
-            team_two: None
-        '''
-        pass
+        self.team_one: None
+        self.team_two: None
 
     def create_hero(self):
         '''Prompt user for Hero information
@@ -199,19 +196,25 @@ class Arena:
         '''Prompt for Ability information.
             return Ability with values from user Input
         '''
-        pass
+        name = input("Enter a name for your new ability")
+        strength = int()
+        return Ability(name, strength)
 
     def create_weapon(self):
         '''Prompt user for Weapon information
             return Weapon with values from user input.
         '''      
-        pass
+        name = input("Enter a name for your new weapon")
+        strength = input("Enter a strength: ")
+        return Weapon(name, int(strength))
 
     def create_armor(self):
         '''Prompt user for Armor information
           return Armor with values from user input.
         '''  
-        pass
+        name = input("Enter a name for your new armor")
+        block = int(input())
+        return Armor(name, block)
 
     def team_battle(self):
         '''Prompt the user to build team_two'''  
@@ -222,14 +225,8 @@ class Arena:
         pass
 
 if __name__ == "__main__":
-    hero1 = Hero("Wonder Woman")
-    hero2 = Hero("Dumbledore")
-    ability1 = Ability("Super Speed", 300)
-    ability2 = Ability("Super Eyes", 130)
-    ability3 = Ability("Wizard Wand", 80)
-    ability4 = Ability("Wizard Beard", 20)
-    hero1.add_ability(ability1)
-    hero1.add_ability(ability2)
-    hero2.add_ability(ability3)
-    hero2.add_ability(ability4)
-    hero1.fight(hero2)
+    arena = Arena()
+    arena.build_team_one()
+    arena.build_team_two()
+    arena.team_battle()
+    arena.show_stats()
