@@ -184,9 +184,9 @@ class Arena:
         '''  
         self.name = input("Enter a name for your hero: ") 
         new_hero = Hero(self.name)
-        self.prompt_for(new_hero, "weapon")
-        self.prompt_for(new_hero, "ability")
-        self.prompt_for(new_hero, "armor")
+        input(new_hero, "weapon")
+        input(new_hero, "ability")
+        input(new_hero, "armor")
         return new_hero
 
     def build_team_one(self):
@@ -229,8 +229,33 @@ class Arena:
         self.team_one.attack(self.team_two)
 
     def show_stats(self):
-        '''Prints team statistics to terminal.'''    
-        pass
+        '''Prints team statistics to terminal.'''   
+        team_one_live_heroes_names = []
+        team_two_live_heroes_names = []
+
+        live_one_heroes = 0
+        for hero in self.team_one_heroes:
+            if hero.is_alive():
+                live_one_heroes += 1
+        live_two_heroes = 0
+        for hero in self.team_two_heroes:
+            if hero.is_alive():
+                live_two_heroes += 1
+
+        if live_one_heroes > live_two_heroes:
+            print("Team One wins!!!")
+        elif live_one_heroes < live_two_heroes:
+            print("Team Two wins!!!")
+
+        print("Stats for Team One")
+        self.team_one.stats()
+        for name in team_one_live_heroes_names:
+            print(name)
+
+        print("Stats for Team Two")
+        self.team_two.stats()
+        for name in team_two_live_heroes_names:
+            print(name)
 
 if __name__ == "__main__":
     arena = Arena()
