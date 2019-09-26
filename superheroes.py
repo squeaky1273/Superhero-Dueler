@@ -122,7 +122,7 @@ class Hero:
     
     def add_weapon(self, weapon):
         '''Add weapon to self.abilities'''
-        pass
+        self.abilities.append(weapon)
 
 class Weapon(Ability):
     def attack(self):
