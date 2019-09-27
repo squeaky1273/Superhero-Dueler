@@ -51,10 +51,10 @@ class Hero:
         '''Calculate the total damage from all ability attacks.
           return: total:Int
           '''
-        total = 0
+        total_attack = 0
         for ability in self.abilities:
-            total += ability.attack()
-        return total
+            total_attack += ability.attack()
+        return total_attack
 
     def add_armor(self, armor):
         '''Add armor to self.armors
@@ -184,25 +184,25 @@ class Arena:
         '''Prompt for Ability information.
             return Ability with values from user Input
         '''
-        name = input("Enter a name for your new ability")
-        strength = int(input("Enter an attack ability/strength: "))
-        return Ability(name, strength)
+        ability_name = input("Enter a name for your new ability")
+        ability_strength = int(input("Enter an the strength for your ability: "))
+        return Ability(ability_name, ability_strength)
 
     def create_weapon(self):
         '''Prompt user for Weapon information
             return Weapon with values from user input.
         '''      
-        name = input("Enter a name for your new weapon")
-        strength = input("Enter a strength: ")
-        return Weapon(name, int(strength))
+        weapon_name = input("Enter a name for your new weapon")
+        weapon_strength = input("Enter a strength: ")
+        return Weapon(weapon_name, int(weapon_strength))
 
     def create_armor(self):
         '''Prompt user for Armor information
           return Armor with values from user input.
         '''  
-        name = input("Enter a name for your new armor")
-        block = int(input("Enter a block power: "))
-        return Armor(name, block)
+        armor_name = input("Enter a name for your new armor")
+        armor_block = int(input("Enter a block power: "))
+        return Armor(armor_name, armor_block)
 
     def create_hero(self):
         '''Prompt user for Hero information
@@ -236,17 +236,23 @@ class Arena:
 
         add_hero = 0
         while add_hero < int(team_size):
+            self.team_one.add_hero(add_hero)
             add_hero += 1
+
+        return self.team_one
 
     def build_team_two(self):
         '''Prompt the user to build team_two'''
-        team_two_name = input("Enter a name fot team two: ")
+        team_two_name = input("Enter a name for team two: ")
         self.team_two = Team(team_two_name)
         team_size = input("Enter how many team members in Team 2: ")
 
         add_hero = 0
         while add_hero < int(team_size):
+            self.team_two.add_team(add_hero)
             add_hero += 1
+
+        return self.team_two
 
     def team_battle(self):
         '''Prompt the user to build team_two'''  
