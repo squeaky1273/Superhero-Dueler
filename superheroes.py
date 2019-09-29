@@ -164,8 +164,8 @@ class Team:
             opponent = choice(other_team.survived())
         
             return hero.fight(opponent)
-    
-    def survived(self):
+     
+    def survived(self): #added instance for Team
         alive = [hero for hero in self.heroes if hero.is_alive()]
         return alive
     
