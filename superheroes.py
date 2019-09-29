@@ -25,7 +25,7 @@ class Armor:
 
     def block(self):
         ''' Return a value between 0 and the value set by self.max_damage.'''
-        return random.randint(0, self.max_block)
+        return random.randint(0, int(self.max_block))
 
 class Hero:
     def __init__(self, name, starting_health = 100): #Initialization function
@@ -62,7 +62,7 @@ class Hero:
         '''
         self.armors.append(armor)
         
-    def defend(self, damage_amt):
+    def defend(self, damage_amt=0):
         '''Runs `block` method on each armor.
         Returns sum of all blocks
         '''  
@@ -71,6 +71,8 @@ class Hero:
         for armor in self.armors:
             block = armor.block()
             total_armor = total_armor + block
+
+        sum = total_armor - damage_amt 
         return sum
    
     def take_damage(self, damage):
@@ -158,11 +160,16 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
-        self.hero = choice(self.hero)
-        opponent = choice(other_team.opponent())
+        while len(self.players()) > 0 or len(other_team.players() > 0):
+            hero = choice(self.players())
+            opponent = choice(other_team.players())
         
-        self.hero.fight(opponent)
-
+        return hero.fight(opponent)
+    
+    def players(self):
+        alive = [hero for hero in self.heroes if hero.is_alive()]
+        return alive
+    
     def revive_heroes(self, health=100):
         ''' Reset all heroes health to starting_health'''
         for hero in self.heroes:
@@ -172,7 +179,7 @@ class Team:
         '''Print team statistics'''
         for hero in self.heroes:
             print("Hero: " + hero.name)
-            print("Death: " +str(hero.num_deaths))
+            print("Death: " + str(hero.num_deaths))
             print("Kills: " + str(hero.num_kills))
 
 class Arena:
@@ -249,7 +256,7 @@ class Arena:
 
         add_hero = 0
         while add_hero < int(team_size):
-            self.team_two.add_team(add_hero)
+            self.team_two.add_hero(add_hero)
             add_hero += 1
 
         return self.team_two

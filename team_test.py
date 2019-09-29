@@ -221,7 +221,7 @@ def create_set():
     return hero_set
 
 
-def test_armor():
+def test_armor(armor):
     armor = superheroes.Hero("The Ring", 200)
     for _ in range(0, 500):
         defense = armor.defend()
@@ -283,7 +283,7 @@ def test_hero_defense_mean_value():
         accepted_window and actual_mean >= calculated_mean - accepted_window
 
 
-def test_hero_defense_standard_deviation():
+def test_hero_defense_standard_deviation(damage_amt):
     willow_waffle = superheroes.Hero("Willow Waffle")
     strength = random.randint(400, 30000)
     willow = superheroes.Armor("Willowness", strength)
