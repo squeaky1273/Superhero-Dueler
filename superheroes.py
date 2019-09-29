@@ -1,5 +1,5 @@
 import random
-from random import choice
+from random import randint
 
 class Ability:
     def __init__(self, name, attack_strength): #Initialization function
@@ -159,20 +159,29 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
-        while len(self.survived()) > 0 and len(other_team.survived()) > 0:
-            hero = choice(self.survived())
-            opponent = choice(other_team.survived())
-        
-            return hero.fight(opponent)
-     
-    def survived(self): #added instance for Team
-        alive = [hero for hero in self.heroes if hero.is_alive()]
-        return alive
+        while self.hero() and other_team.hero():
+            your_team = self.hero()
+            other_team = other_team.hero()
+            
+            return your_team.fight(other_team)
     
-    def revive_heroes(self, health=100):
+    def hero(self):
+        while True:
+            survived = random.choice(self.heroes)
+            if survived.is_alive():
+                return survived
+    
+    def revive_heroes(self, starting_health=100):
         ''' Reset all heroes health to starting_health'''
+        self.current_health = starting_health
         for hero in self.heroes:
             hero.current_health = hero.starting_health
+    
+    def is_alive(self):
+        if self.current_health < 0:
+            return False
+        else: 
+            return True
            
     def stats(self):
         '''Print team statistics'''
