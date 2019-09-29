@@ -112,7 +112,6 @@ class Hero:
              
               elif len(self.abilities) == 0 and len(opponent.abilities) == 0: # If no abilities exist
                   print("Draw!")
-                  return False
     
     def add_kill(self, num_kills):
         ''' Update kills with num_kills'''
@@ -160,13 +159,13 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
-        while len(self.players()) > 0 or len(other_team.players() > 0):
-            hero = choice(self.players())
-            opponent = choice(other_team.players())
+        while len(self.survived()) > 0 and len(other_team.survived()) > 0:
+            hero = choice(self.survived())
+            opponent = choice(other_team.survived())
         
-        return hero.fight(opponent)
+            return hero.fight(opponent)
     
-    def players(self):
+    def survived(self):
         alive = [hero for hero in self.heroes if hero.is_alive()]
         return alive
     
