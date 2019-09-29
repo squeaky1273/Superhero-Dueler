@@ -156,6 +156,7 @@ class Team:
     def add_hero(self, hero):
         '''Add Hero object to self.heroes.'''
         self.heroes.append(hero)
+        print(hero) 
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
@@ -165,9 +166,10 @@ class Team:
             
             return your_team.fight(other_team)
     
-    def hero(self):
+    def hero(self): # helps the attack function right above
         while True:
             survived = random.choice(self.heroes)
+            print (survived)
             if survived.is_alive():
                 return survived
     
@@ -191,7 +193,7 @@ class Team:
             print("Kills: " + str(hero.num_kills))
 
 class Arena:
-    def __init__(self):
+    def __init__(self): # Initialization function
         self.team_one: None
         self.team_two: None
 
@@ -275,29 +277,39 @@ class Arena:
 
     def show_stats(self):
         '''Prints team statistics to terminal.'''   
-        team_one_live_heroes_names = []
-        team_two_live_heroes_names = []
+        team_one_live_heroes_names = [] # names of the living heroes in Team 1
+        team_two_live_heroes_names = [] # names of the living heroes in Team 2
 
-        live_one_heroes = 0
+        # deciding which team wins by how many living heroes they have
+        # Team 1
+        live_one_heroes = 0 
         for hero in self.team_one.heroes:
             if hero.is_alive():
                 live_one_heroes += 1
+                team_one_live_heroes_names.append(hero.name)
+        # Team 2
         live_two_heroes = 0
         for hero in self.team_two.heroes:
             if hero.is_alive():
                 live_two_heroes += 1
+                team_two_live_heroes_names.append(hero.name)
 
-        if live_one_heroes > live_two_heroes:
-            print("Team One wins!!!")
-        elif live_one_heroes < live_two_heroes:
-            print("Team Two wins!!!")
+        # which team won
+        if live_one_heroes > live_two_heroes: # if there are more living heroes in team 1
+            print("Team One wins!!!") # Team 1 wins
+        elif live_one_heroes < live_two_heroes: # if there are more living heroes in team 2
+            print("Team Two wins!!!") # Team 2 wins
+        else:
+            print("No winner!!!") # draw/no winner
 
-        print("Stats for Team One")
+        # show stats for Team 1
+        print("Stats for Team One:")
         self.team_one.stats()
         for name in team_one_live_heroes_names:
             print(name)
 
-        print("Stats for Team Two")
+        # show stats for Team 2
+        print("Stats for Team Two:")
         self.team_two.stats()
         for name in team_two_live_heroes_names:
             print(name)
