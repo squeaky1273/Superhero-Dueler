@@ -161,7 +161,7 @@ class Team(Hero):
         self.heroes.append(Hero(hero))
         print(hero) 
     
-    def attyack(self, other_team):
+    def attdack(self, other_team):
         ''' Battle each team against each other.'''
         your_team = self.survived()
         other_team = other_team.survived()
