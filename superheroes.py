@@ -160,18 +160,17 @@ class Team:
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
-        while self.hero() and other_team.hero():
-            your_team = self.hero()
-            other_team = other_team.hero()
+        your_team = self.survived()
+        other_team = other_team.survived()
             
-            return your_team.fight(other_team)
+        return your_team.fight(other_team)
     
-    def hero(self): # helps the attack function right above
+    def survived(self): # helps the attack function right above
         while True:
-            survived = random.choice(self.heroes)
-            print (survived)
-            if survived.is_alive():
-                return survived
+            survive = random.choice(self.heroes)
+            print(survive)
+            if survive == True:
+                return survive
     
     def revive_heroes(self, starting_health=100):
         ''' Reset all heroes health to starting_health'''
@@ -228,17 +227,19 @@ class Arena:
         new_hero = input("Enter a name for your hero: ") 
         self.hero = Hero(new_hero)
         
+        # enter inputs for the two teams for a fight
         add = True
         while add == True:
             choose = input("Enter:\nA to add Ability\nB to add Armor\nC for a Weapon")
+            # ability
             if choose == "A":
                 ability = self.create_ability()
                 self.hero.add_ability(ability)
-
+            # armor
             elif choose == "B":
                 armor = self.create_armor()
                 self.hero.add_armor(armor)
-
+            # weapon
             elif choose == "C":
                 weapon = self.create_weapon
                 self.hero.add_weapon(weapon)
@@ -247,9 +248,9 @@ class Arena:
 
     def build_team_one(self):
         '''Prompt the user to build team_one '''    
-        team_one_name = input("Enter a name for team one: ")
+        team_one_name = input("Enter a name for Team One: ")
         self.team_one = Team(team_one_name)
-        team_size = input("Enter how many team members in Team 1: ")
+        team_size = input("Enter how many team members in Team One: ")
 
         add_hero = 0
         while add_hero < int(team_size):
@@ -260,9 +261,9 @@ class Arena:
 
     def build_team_two(self):
         '''Prompt the user to build team_two'''
-        team_two_name = input("Enter a name for team two: ")
+        team_two_name = input("Enter a name for Team Two: ")
         self.team_two = Team(team_two_name)
-        team_size = input("Enter how many team members in Team 2: ")
+        team_size = input("Enter how many team members in Team Two: ")
 
         add_hero = 0
         while add_hero < int(team_size):
@@ -272,7 +273,7 @@ class Arena:
         return self.team_two
 
     def team_battle(self):
-        '''Prompt the user to build team_two'''  
+        '''Battle team_one and team_two together.''' 
         self.team_one.attack(self.team_two)
 
     def show_stats(self):
