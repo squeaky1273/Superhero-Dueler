@@ -167,8 +167,7 @@ class Team:
     
     def survived(self): # helps the attack function right above
         survive = random.choice(self.heroes)
-        if survive == True:
-            return survive
+        return survive
     
     def revive_heroes(self, starting_health=100):
         ''' Reset all heroes health to starting_health'''
