@@ -166,11 +166,9 @@ class Team:
         return your_team.fight(other_team)
     
     def survived(self): # helps the attack function right above
-        while True:
-            survive = random.choice(self.heroes)
-            print(survive)
-            if survive == True:
-                return survive
+        survive = random.choice(self.heroes)
+        if survive == True:
+            return survive
     
     def revive_heroes(self, starting_health=100):
         ''' Reset all heroes health to starting_health'''
