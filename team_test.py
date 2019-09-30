@@ -347,7 +347,7 @@ def test_team_attack():
     team_two.add_hero(athena)
     assert team_two.heroes[0].current_health == 100
 
-    team_one.attack(team_two)
+    team_one.fight(team_two)
 
     assert team_two.heroes[0].current_health <= 0
 
