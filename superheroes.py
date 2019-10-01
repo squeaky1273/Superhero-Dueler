@@ -208,7 +208,7 @@ class Arena:
             return Weapon with values from user input.
         '''      
         weapon_name = input("Enter a name for your new weapon: ")
-        weapon_strength = input("Enter a strength: ")
+        weapon_strength = input("Enter how much damage it makes: ")
         
         return Weapon(weapon_name, weapon_strength)
 
@@ -217,7 +217,7 @@ class Arena:
           return Armor with values from user input.
         '''  
         armor_name = input("Enter a name for your new armor: ")
-        armor_block = input("Enter a block power: ")
+        armor_block = input("Enter how much damage the armor blocks: ")
         return Armor(armor_name, armor_block)
 
     def create_hero(self):
@@ -231,7 +231,7 @@ class Arena:
         # enter inputs for the two teams for a fight
         add = True
         while add == True:
-            choose = input("Enter:\nA to add Ability: \nB to add Armor: \nC for a Weapon: \nD to Finish: ")
+            choose = input("Enter:\nA to add Ability: \nB to add Armor: \nC to add a Weapon: \nD to Finish: ")
             # ability
             if choose == "A":
                 ability = self.create_ability()
@@ -242,7 +242,7 @@ class Arena:
                 self.hero.add_armor(armor)
             # weapon
             elif choose == "C":
-                weapon = self.create_weapon
+                weapon = self.create_weapon()
                 self.hero.add_weapon(weapon)
             elif choose == "D":
                 add = False
@@ -285,7 +285,7 @@ class Arena:
 
     def show_stats(self):
         '''Prints team statistics to terminal.'''  
-        print(self.team_battle() + " wins") 
+        print(self.team_battle())
         team_one_live_heroes_names = [] # names of the living heroes in Team 1
         team_two_live_heroes_names = [] # names of the living heroes in Team 2
 
