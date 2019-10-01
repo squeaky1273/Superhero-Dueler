@@ -20,8 +20,8 @@ class Armor:
             name: String
             max_block: Integer
         '''
-        self.name: name
-        self.max_block: max_block
+        self.name = name
+        self.max_block = max_block
 
     def block(self):
         ''' Return a value between 0 and the value set by self.max_damage.'''

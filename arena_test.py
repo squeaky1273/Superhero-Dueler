@@ -16,7 +16,6 @@ import pytest
 import superheroes
 import sys
 import io
-​
 
 # Helper funcs
 
@@ -27,23 +26,24 @@ def capture_console_output(function_body):
     function_body()
     sys.stdout = sys.__stdout__
     return string_io.getvalue()
-​
+
 def test_create_ability():
     input_values = ["Amazing Ability", '200']
-    # output = []
-​
+    # output = []​
+
     def mock_input(s):
         # output.append(s)
         return input_values.pop(0)
     superheroes.input = mock_input
     # superheroes.print = lambda s: output.append(s)
-​
+
+
     arena = superheroes.Arena()
     ability = arena.create_ability()
-​
+
     assert ['Amazing Ability', 200] == [ability.name, ability.max_damage]
 ​
-​
+
 def test_create_weapon():
     input_values = ["Amazing Weapon", '200']
 ​
