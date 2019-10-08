@@ -164,6 +164,7 @@ class Team():
     
     def attack(self, other_team):
         ''' Battle each team against each other.'''
+        #Thanks/credit to Aucoeur Ngo
         while len(self.survived()) > 0 or len(other_team.survived() > 0):
             self.hero = choice(self.survived())
             self.opponent = choice(other_team.survived())
