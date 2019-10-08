@@ -42,20 +42,15 @@ def test_create_ability():
     ability = arena.create_ability()
 
     assert ['Amazing Ability', 200] == [ability.name, ability.max_damage]
-​
 
 def test_create_weapon():
     input_values = ["Amazing Weapon", '200']
-​
     def mock_input(s):
         return input_values.pop(0)
     superheroes.input = mock_input
-​
     arena = superheroes.Arena()
     weapon = arena.create_weapon()
-​
     assert ['Amazing Weapon', 200] == [weapon.name, weapon.max_damage]
-​
 ​
 def test_create_armor():
     input_values = ["Amazing Armor", '300']
@@ -63,7 +58,6 @@ def test_create_armor():
     def mock_input(s):
         return input_values.pop(0)
     superheroes.input = mock_input
-​
     arena = superheroes.Arena()
     armor = arena.create_armor()
 ​
